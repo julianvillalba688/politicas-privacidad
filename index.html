@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Política de Privacidad – Tequeños & Sabor Venezolano</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --rojo:     #C0392B;
+      --amarillo: #F4C430;
+      --azul:     #1A3A5C;
+      --crema:    #FDF6EC;
+      --texto:    #1A1A1A;
+      --gris:     #6B7280;
+      --borde:    #E8D5B0;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background-color: var(--crema);
+      color: var(--texto);
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    /* ── HEADER ── */
+    header {
+      background: var(--azul);
+      color: #fff;
+      padding: 0 24px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 12px rgba(0,0,0,.3);
+    }
+    .nav-inner {
+      max-width: 900px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 60px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: #fff;
+    }
+    .brand-icon { font-size: 22px; }
+    .brand-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 17px;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+    nav a {
+      color: rgba(255,255,255,.75);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 500;
+      margin-left: 22px;
+      transition: color .2s;
+    }
+    nav a:hover { color: var(--amarillo); }
+
+    /* ── HERO BANNER ── */
+    .hero {
+      background: linear-gradient(135deg, var(--rojo) 0%, #8B1A1A 100%);
+      color: #fff;
+      text-align: center;
+      padding: 64px 24px 52px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '🫔 🧀 🥟';
+      position: absolute;
+      font-size: 120px;
+      opacity: .06;
+      top: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      letter-spacing: 40px;
+      pointer-events: none;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: var(--amarillo);
+      color: var(--azul);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 4px 14px;
+      border-radius: 20px;
+      margin-bottom: 18px;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(26px, 5vw, 42px);
+      font-weight: 900;
+      margin-bottom: 12px;
+      line-height: 1.2;
+    }
+    .hero p {
+      font-size: 15px;
+      opacity: .85;
+      max-width: 520px;
+      margin: 0 auto 22px;
+    }
+    .hero-meta {
+      font-size: 12px;
+      opacity: .6;
+      letter-spacing: .5px;
+    }
+
+    /* ── LAYOUT ── */
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 56px 24px 80px;
+    }
+
+    /* ── QUICK NAV ── */
+    .quick-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 48px;
+      padding: 20px;
+      background: #fff;
+      border: 1px solid var(--borde);
+      border-radius: 12px;
+    }
+    .quick-nav a {
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--azul);
+      background: var(--crema);
+      border: 1px solid var(--borde);
+      padding: 6px 14px;
+      border-radius: 20px;
+      transition: all .2s;
+    }
+    .quick-nav a:hover {
+      background: var(--amarillo);
+      border-color: var(--amarillo);
+      color: var(--azul);
+    }
+
+    /* ── SECTIONS ── */
+    section { margin-bottom: 52px; scroll-margin-top: 80px; }
+
+    .section-label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .section-icon {
+      width: 38px; height: 38px;
+      background: var(--rojo);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--azul);
+    }
+
+    p { margin-bottom: 14px; color: #333; }
+    p:last-child { margin-bottom: 0; }
+
+    /* ── CARD ── */
+    .card {
+      background: #fff;
+      border: 1px solid var(--borde);
+      border-radius: 14px;
+      padding: 28px 32px;
+      margin-top: 16px;
+    }
+    .card + .card { margin-top: 12px; }
+
+    /* ── LISTS ── */
+    ul, ol {
+      padding-left: 20px;
+      margin: 10px 0 14px;
+    }
+    li { margin-bottom: 7px; color: #333; }
+    li strong { color: var(--azul); }
+
+    /* ── HIGHLIGHT BOX ── */
+    .highlight {
+      background: linear-gradient(135deg, #FFF8E1 0%, #FFFDE7 100%);
+      border-left: 4px solid var(--amarillo);
+      border-radius: 0 10px 10px 0;
+      padding: 16px 20px;
+      margin: 16px 0;
+      font-size: 14px;
+    }
+    .highlight strong { color: var(--rojo); }
+
+    /* ── STEPS ── */
+    .steps { counter-reset: step; margin: 16px 0; }
+    .step {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 14px;
+      align-items: flex-start;
+    }
+    .step-num {
+      counter-increment: step;
+      width: 30px; height: 30px;
+      background: var(--azul);
+      color: #fff;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 13px; font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .step-num::before { content: counter(step); }
+    .step-body { flex: 1; font-size: 14px; }
+
+    /* ── CONTACT CARD ── */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 14px;
+      margin-top: 16px;
+    }
+    .contact-item {
+      background: #fff;
+      border: 1px solid var(--borde);
+      border-radius: 12px;
+      padding: 18px 20px;
+      text-align: center;
+    }
+    .contact-item .ci-icon { font-size: 24px; margin-bottom: 8px; }
+    .contact-item .ci-label {
+      font-size: 11px; letter-spacing: 1px; text-transform: uppercase;
+      color: var(--gris); font-weight: 600; margin-bottom: 4px;
+    }
+    .contact-item .ci-value {
+      font-size: 14px; font-weight: 500; color: var(--azul);
+      word-break: break-all;
+    }
+    .contact-item a { color: var(--rojo); text-decoration: none; }
+    .contact-item a:hover { text-decoration: underline; }
+
+    /* ── DIVIDER ── */
+    hr { border: none; border-top: 1px solid var(--borde); margin: 40px 0; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--azul);
+      color: rgba(255,255,255,.6);
+      text-align: center;
+      padding: 28px 24px;
+      font-size: 13px;
+    }
+    footer strong { color: var(--amarillo); }
+
+    @media (max-width: 600px) {
+      .card { padding: 20px 18px; }
+      nav { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════ HEADER ═══════════════ -->
+<header>
+  <div class="nav-inner">
+    <a class="brand" href="#">
+      <span class="brand-icon">🧀</span>
+      <span class="brand-name">Tequeños &amp;<br>Sabor Venezolano</span>
+    </a>
+    <nav>
+      <a href="#politica">Política de Privacidad</a>
+      <a href="#eliminacion">Eliminación de Datos</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ═══════════════ HERO ═══════════════ -->
+<div class="hero">
+  <div class="hero-badge">Aviso Legal &amp; Cumplimiento Meta</div>
+  <h1>Política de Privacidad &amp;<br>Eliminación de Datos</h1>
+  <p>Conoce cómo protegemos tu información cuando interactúas con nuestro agente de ventas por WhatsApp.</p>
+  <div class="hero-meta">Última actualización: 2 de mayo de 2026</div>
+</div>
+
+<!-- ═══════════════ MAIN ═══════════════ -->
+<div class="container">
+
+  <!-- Navegación rápida -->
+  <div class="quick-nav">
+    <span style="font-size:13px;color:var(--gris);font-weight:600;align-self:center;">Ir a →</span>
+    <a href="#recopilacion">Recopilación de datos</a>
+    <a href="#uso">Uso de la información</a>
+    <a href="#whatsapp">WhatsApp Business</a>
+    <a href="#proteccion">Protección</a>
+    <a href="#derechos">Tus derechos</a>
+    <a href="#eliminacion">Eliminación de datos</a>
+    <a href="#contacto">Contacto</a>
+  </div>
+
+  <!-- ── SECCIÓN 1 : INTRODUCCIÓN ── -->
+  <section id="politica">
+    <div class="section-label">
+      <div class="section-icon">📋</div>
+      <h2>Política de Privacidad</h2>
+    </div>
+    <div class="card">
+      <p>La presente Política de Privacidad describe cómo <strong>Tequeños &amp; Sabor Venezolano</strong> ("nosotros", "nuestro") recopila, utiliza y protege la información que obtenemos de los usuarios que interactúan con nuestro agente de ventas automatizado a través de la <strong>API de WhatsApp Business</strong> y nuestras plataformas integradas.</p>
+      <p>Al iniciar una conversación con nuestro agente de WhatsApp o al autorizar cualquier conexión con Meta/Facebook, aceptas las prácticas descritas en esta política.</p>
+      <div class="highlight">
+        <strong>Importante:</strong> Esta página fue creada para cumplir con los requisitos de la <strong>Plataforma de Meta</strong> (Meta Platform Terms) y los <strong>Términos de WhatsApp Business API</strong>.
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SECCIÓN 2 : RECOPILACIÓN ── -->
+  <section id="recopilacion">
+    <div class="section-label">
+      <div class="section-icon">📥</div>
+      <h2>1. Datos que Recopilamos</h2>
+    </div>
+    <div class="card">
+      <p>Cuando interactúas con nuestro agente de ventas por WhatsApp, podemos recopilar:</p>
+      <ul>
+        <li><strong>Información de contacto:</strong> número de teléfono de WhatsApp y nombre de perfil.</li>
+        <li><strong>Historial de conversación:</strong> mensajes enviados a nuestro agente para gestionar tu pedido.</li>
+        <li><strong>Datos del pedido:</strong> productos seleccionados (tequeños, pastelitos, hallaquitas u otros), cantidad, dirección de entrega y hora de entrega solicitada.</li>
+        <li><strong>Información de pago:</strong> referencia del pago (no almacenamos datos de tarjetas bancarias).</li>
+        <li><strong>Datos técnicos:</strong> marca de tiempo de los mensajes y metadatos de la conversación.</li>
+      </ul>
+      <p>Recopilamos únicamente los datos estrictamente necesarios para procesar tu pedido y brindarte un servicio óptimo.</p>
+    </div>
+  </section>
+
+  <!-- ── SECCIÓN 3 : USO ── -->
+  <section id="uso">
+    <div class="section-label">
+      <div class="section-icon">🎯</div>
+      <h2>2. Uso de la Información</h2>
+    </div>
+    <div class="card">
+      <p>Utilizamos los datos recopilados exclusivamente para:</p>
+      <ul>
+        <li>Procesar y confirmar tus pedidos de comida venezolana.</li>
+        <li>Coordinar la preparación y entrega de tus productos.</li>
+        <li>Enviarte actualizaciones sobre el estado de tu pedido por WhatsApp.</li>
+        <li>Mejorar la calidad de nuestro servicio y la experiencia del cliente.</li>
+        <li>Cumplir con obligaciones legales aplicables.</li>
+      </ul>
+      <div class="highlight">
+        <strong>No vendemos ni compartimos</strong> tu información personal con terceros para fines de marketing o publicidad.
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SECCIÓN 4 : WHATSAPP BUSINESS ── -->
+  <section id="whatsapp">
+    <div class="section-label">
+      <div class="section-icon">💬</div>
+      <h2>3. Integración con WhatsApp Business API</h2>
+    </div>
+    <div class="card">
+      <p>Nuestro agente de ventas opera a través de la <strong>API de WhatsApp Business</strong> de Meta Platforms, Inc. Al interactuar con nuestro número de WhatsApp:</p>
+      <ul>
+        <li>Las conversaciones son procesadas a través de los servidores de Meta según sus <a href="https://www.whatsapp.com/legal/business-terms" target="_blank" rel="noopener" style="color:var(--rojo);">Términos de WhatsApp Business</a>.</li>
+        <li>Utilizamos <strong>n8n</strong> como plataforma de automatización para gestionar el flujo de conversación del agente. Los datos del chat son procesados en nuestros flujos de trabajo automáticos y no se comparten con terceros.</li>
+        <li>Los mensajes de marketing o promocionales se envían únicamente a usuarios que han dado su consentimiento previo.</li>
+        <li>Puedes optar por no recibir mensajes en cualquier momento respondiendo <em>"STOP"</em> o <em>"NO GRACIAS"</em>.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ── SECCIÓN 5 : META / FACEBOOK ── -->
+  <section>
+    <div class="section-label">
+      <div class="section-icon">📘</div>
+      <h2>4. Integración con la Plataforma de Meta</h2>
+    </div>
+    <div class="card">
+      <p>Nuestra aplicación está registrada en Meta for Developers para acceder a la <strong>API de WhatsApp Business</strong>. En cumplimiento con los <em>Meta Platform Terms</em>:</p>
+      <ul>
+        <li>Solo accedemos a los permisos de la API estrictamente necesarios para operar el agente de ventas.</li>
+        <li>No almacenamos tokens de acceso de usuarios de forma insegura.</li>
+        <li>Cualquier dato recibido a través de las APIs de Meta se utiliza únicamente conforme a dichos términos y la presente política.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ── SECCIÓN 6 : PROTECCIÓN ── -->
+  <section id="proteccion">
+    <div class="section-label">
+      <div class="section-icon">🔒</div>
+      <h2>5. Protección de Datos</h2>
+    </div>
+    <div class="card">
+      <p>Implementamos medidas técnicas y organizativas para proteger tu información:</p>
+      <ul>
+        <li>Comunicaciones cifradas mediante <strong>TLS/HTTPS</strong>.</li>
+        <li>Acceso restringido a datos personales basado en el principio de mínimo privilegio.</li>
+        <li>Revisiones periódicas de seguridad de nuestros flujos de automatización.</li>
+        <li>Almacenamiento seguro con controles de acceso.</li>
+      </ul>
+      <p>Aunque aplicamos altos estándares de seguridad, ninguna transmisión por internet es completamente infalible. Si sospechas un acceso no autorizado, contáctanos de inmediato.</p>
+    </div>
+  </section>
+
+  <!-- ── SECCIÓN 7 : COOKIES ── -->
+  <section>
+    <div class="section-label">
+      <div class="section-icon">🍪</div>
+      <h2>6. Cookies y Seguimiento</h2>
+    </div>
+    <div class="card">
+      <p>Este sitio web utiliza cookies técnicas mínimas, necesarias únicamente para su correcto funcionamiento. No empleamos cookies de seguimiento de terceros ni publicidad basada en comportamiento. Puedes controlar las cookies desde la configuración de tu navegador.</p>
+    </div>
+  </section>
+
+  <!-- ── SECCIÓN 8 : MENORES ── -->
+  <section>
+    <div class="section-label">
+      <div class="section-icon">👶</div>
+      <h2>7. Privacidad de Menores</h2>
+    </div>
+    <div class="card">
+      <p>Nuestros servicios están dirigidos a mayores de 13 años. No recopilamos intencionalmente información personal de menores de esa edad. Si crees que hemos recopilado datos de un menor, contáctanos de inmediato para proceder a su eliminación.</p>
+    </div>
+  </section>
+
+  <!-- ── SECCIÓN 9 : DERECHOS ── -->
+  <section id="derechos">
+    <div class="section-label">
+      <div class="section-icon">⚖️</div>
+      <h2>8. Tus Derechos</h2>
+    </div>
+    <div class="card">
+      <p>Tienes derecho a:</p>
+      <ul>
+        <li><strong>Acceder</strong> a los datos personales que tenemos sobre ti.</li>
+        <li><strong>Rectificar</strong> información incorrecta o incompleta.</li>
+        <li><strong>Eliminar</strong> tus datos (ver sección de eliminación más abajo).</li>
+        <li><strong>Oponerte</strong> al procesamiento de tus datos para ciertos fines.</li>
+        <li><strong>Portabilidad</strong> de los datos en un formato legible por máquina.</li>
+      </ul>
+      <p>Para ejercer cualquiera de estos derechos, contáctanos a través de los medios indicados en la sección de Contacto.</p>
+    </div>
+  </section>
+
+  <!-- ── SECCIÓN 10 : CAMBIOS ── -->
+  <section>
+    <div class="section-label">
+      <div class="section-icon">📝</div>
+      <h2>9. Cambios a Esta Política</h2>
+    </div>
+    <div class="card">
+      <p>Podemos actualizar esta Política de Privacidad periódicamente. Te notificaremos de cambios significativos publicando la nueva versión en esta página y actualizando la fecha de "Última actualización". Te recomendamos revisar esta página con regularidad.</p>
+    </div>
+  </section>
+
+  <hr />
+
+  <!-- ═══════════════ ELIMINACIÓN DE DATOS ═══════════════ -->
+  <section id="eliminacion">
+    <div class="section-label">
+      <div class="section-icon">🗑️</div>
+      <h2>Instrucciones de Eliminación de Datos</h2>
+    </div>
+    <div class="card">
+      <div class="highlight" style="margin-bottom:20px;">
+        <strong>Requisito de la Plataforma Meta:</strong> En cumplimiento con los Meta Platform Terms, los usuarios pueden solicitar la eliminación de todos los datos que <strong>Tequeños &amp; Sabor Venezolano</strong> haya recibido a través de la integración con Meta/WhatsApp Business.
+      </div>
+
+      <h3 style="color:var(--azul);margin-bottom:16px;font-size:17px;">Opción 1 – Vía Configuración de Facebook</h3>
+      <div class="steps">
+        <div class="step"><div class="step-num"></div><div class="step-body">Ve a la <strong>Configuración de tu cuenta de Facebook</strong>.</div></div>
+        <div class="step"><div class="step-num"></div><div class="step-body">Haz clic en <strong>Seguridad e inicio de sesión</strong>.</div></div>
+        <div class="step"><div class="step-num"></div><div class="step-body">En <em>Aplicaciones y sitios web</em>, busca <strong>Tequeños &amp; Sabor Venezolano</strong>.</div></div>
+        <div class="step"><div class="step-num"></div><div class="step-body">Haz clic en <strong>Eliminar</strong> y confirma. Esto revocará el acceso y activará la eliminación de los datos vinculados.</div></div>
+      </div>
+
+      <h3 style="color:var(--azul);margin:20px 0 16px;font-size:17px;">Opción 2 – Vía WhatsApp o Correo Electrónico</h3>
+      <div class="steps">
+        <div class="step"><div class="step-num"></div><div class="step-body">Envíanos un mensaje de WhatsApp al <strong>+57 300 000 0000</strong> con el texto: <em>"Solicitud de eliminación de datos"</em>. — O envía un correo a <a href="mailto:privacidad@tequenosyvzla.com" style="color:var(--rojo);">privacidad@tequenosyvzla.com</a> con el asunto: <em>"Solicitud de Eliminación de Datos"</em>.</div></div>
+        <div class="step"><div class="step-num"></div><div class="step-body">Incluye el número de teléfono de WhatsApp o el correo electrónico asociado a tu cuenta.</div></div>
+        <div class="step"><div class="step-num"></div><div class="step-body">Procesaremos tu solicitud en un plazo máximo de <strong>30 días</strong> y te enviaremos confirmación.</div></div>
+      </div>
+
+      <h3 style="color:var(--azul);margin:20px 0 12px;font-size:17px;">¿Qué datos se eliminarán?</h3>
+      <ul>
+        <li>Tu número de teléfono y nombre de perfil de WhatsApp.</li>
+        <li>Historial de conversaciones y pedidos almacenados en nuestros sistemas.</li>
+        <li>Preferencias y registros de actividad asociados a tu cuenta.</li>
+        <li>Todos los permisos y tokens otorgados a través de la integración con Meta.</li>
+      </ul>
+      <div class="highlight">
+        <strong>Nota:</strong> Podemos conservar ciertos datos por un período limitado para cumplir con obligaciones legales, resolver disputas o hacer cumplir nuestros acuerdos, según lo permita la legislación aplicable.
+      </div>
+    </div>
+  </section>
+
+  <hr />
+
+  <!-- ═══════════════ CONTACTO ═══════════════ -->
+  <section id="contacto">
+    <div class="section-label">
+      <div class="section-icon">📬</div>
+      <h2>Contacto</h2>
+    </div>
+    <p>Si tienes preguntas, inquietudes o solicitudes relacionadas con esta Política de Privacidad o tus datos personales, contáctanos:</p>
+    <div class="contact-grid">
+      <div class="contact-item">
+        <div class="ci-icon">🧀</div>
+        <div class="ci-label">Negocio</div>
+        <div class="ci-value">Tequeños &amp; Sabor Venezolano</div>
+      </div>
+      <div class="contact-item">
+        <div class="ci-icon">📧</div>
+        <div class="ci-label">Correo electrónico</div>
+        <div class="ci-value"><a href="mailto:privacidad@tequenosyvzla.com">privacidad@tequenosyvzla.com</a></div>
+      </div>
+      <div class="contact-item">
+        <div class="ci-icon">💬</div>
+        <div class="ci-label">WhatsApp</div>
+        <div class="ci-value"><a href="https://wa.me/573000000000">+57 300 000 0000</a></div>
+      </div>
+      <div class="contact-item">
+        <div class="ci-icon">🌍</div>
+        <div class="ci-label">Ubicación</div>
+        <div class="ci-value">Santa Marta, Colombia</div>
+      </div>
+    </div>
+  </section>
+
+</div><!-- /container -->
+
+<!-- ═══════════════ FOOTER ═══════════════ -->
+<footer>
+  <p>© 2026 <strong>Tequeños &amp; Sabor Venezolano</strong>. Todos los derechos reservados.</p>
+  <p style="margin-top:6px;font-size:12px;">Esta página es el punto oficial de Política de Privacidad e Instrucciones de Eliminación de Datos para cumplimiento con la plataforma Meta.</p>
+</footer>
+
+</body>
+</html>
